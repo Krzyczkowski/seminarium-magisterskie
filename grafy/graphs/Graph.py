@@ -24,10 +24,10 @@ class Graph:
 
         
         while Q:
-            vertex = Q.popleft()
-            print(vertex, end=" ")
+            n = Q.popleft()
+            print(n, end=" ")
 
-            for neighbour in self.graph[vertex]:
+            for neighbour in self.graph.get(n,[]):
                 if neighbour not in visited:
                     Q.append(neighbour)
                     visited.add(neighbour)
