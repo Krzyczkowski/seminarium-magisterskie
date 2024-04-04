@@ -31,3 +31,23 @@ class Graph:
                 if neighbour not in visited:
                     Q.append(neighbour)
                     visited.add(neighbour)
+
+
+    def dfs(self,s):
+        visited = set()
+        visited.add(s)
+        stack = []
+        stack.append(s)
+        print(s, end = ' ')
+        while(len(stack)):
+            n = stack[-1]
+            stack.pop()
+
+            if n not in visited:
+                print(n, end=' ')
+                visited.add(s)
+
+            for neighbour in self.graph.get(n,[]):
+                if neighbour not in visited:
+                    stack.append(neighbour)
+            
